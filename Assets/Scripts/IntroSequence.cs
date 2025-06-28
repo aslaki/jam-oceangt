@@ -3,6 +3,7 @@ using PrimeTween;
 using TMPro.Examples;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class IntroSequence : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class IntroSequence : MonoBehaviour
 
     [SerializeField]
     private Transform bell;
+
+    [SerializeField]
+    private Light2D globalLight;
+
+    [SerializeField]
+    private float endIntensity = 0.1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,8 +51,9 @@ public class IntroSequence : MonoBehaviour
         // Move bell to position
         Tween.Position(bell, bellEndPosition.position, 11f);
 
-       
-
+        Tween.Custom(globalLight.intensity, endIntensity, duration: 11f,
+             onValueChange: newVal => globalLight.intensity = newVal);
+             
         // Create swinging motion - pendulum-like movement
         // Swing horizontally (left and right)
         var swingDistance = 0.5f; // Adjust this value to control swing intensity
