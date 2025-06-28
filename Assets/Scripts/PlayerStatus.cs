@@ -79,15 +79,17 @@ using UnityEngine.SceneManagement;
             Debug.Log("Resetting player status");
             currentOxygen = maxOxygen;
             currentSanity = maxSanity;
+            currentLightPower = 5f;
             isDead = false;
             OnOxygenChanged?.Invoke(oxygenPercentage);
             OnSanityChanged?.Invoke(sanityPercentage);
+            OnLightPowerChanged?.Invoke(currentLightPower);
         }
 
         public void ApplyEffect(FishEffectType fishEffectType) {
             switch (fishEffectType) {
                 case FishEffectType.Light:
-                    IncreaseLightPower(10);
+                    IncreaseLightPower(1);
                     break;
                 case FishEffectType.Sanity:
                     GainSanity(10);

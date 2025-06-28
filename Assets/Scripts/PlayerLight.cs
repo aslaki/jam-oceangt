@@ -13,6 +13,15 @@ public class PlayerLight : MonoBehaviour
     private const float coneAngleOffset = 70f;
     private const float coneDistanceOffsetFactor = 0.4f;
 
+    [SerializeField] private PlayerStatus playerStatus;
+
+    private void OnEnable() {
+        playerStatus.OnLightPowerChanged += UpdateLightPower;
+    }
+
+    private void OnDisable() {
+        playerStatus.OnLightPowerChanged -= UpdateLightPower;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +37,10 @@ public class PlayerLight : MonoBehaviour
     void Update()
     {
         DetectEnemiesInCone();
+    }
+
+    private void UpdateLightPower(float lightPower) {
+        spotLight.pointLightOuterRadius = lightPower;
     }
 
     /// <summary>
