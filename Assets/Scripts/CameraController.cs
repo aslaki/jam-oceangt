@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
                 mainCamera.transform.position = new Vector3(0, 10, -10);
                 break;
             case GameState.IntroSequence:
-                StartCoroutine(Tween.TweenToTarget(cameraGamePosition, this.transform, startGameTweenDuration));
+                StartCoroutine(LegacyTween.TweenToTarget(cameraGamePosition, this.transform, startGameTweenDuration));
                 break;
         }
     }

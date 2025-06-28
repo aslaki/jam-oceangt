@@ -32,7 +32,7 @@ public class BellController : MonoBehaviour
     {
         if (newState == GameState.IntroSequence)
         {
-            StartCoroutine(Tween.TweenToTarget(bellPosition, this.transform, 5f));
+            StartCoroutine(LegacyTween.TweenToTarget(bellPosition, this.transform, 5f));
         }
     }
     

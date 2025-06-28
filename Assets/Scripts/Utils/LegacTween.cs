@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Tween
+public class LegacyTween
 {
     public static IEnumerator TweenToTarget(Transform target, Transform objectToMove, float duration)
     {

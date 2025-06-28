@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using PrimeTween;
 
 public class PlayerLight : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class PlayerLight : MonoBehaviour
 
     [Tooltip("The sanity loss for the horror creature effect.")]
     [SerializeField] private float horrorCreatureEffectSanityLoss = 30f;
+
+    [SerializeField] private Camera mainCamera;
 
     private void OnEnable() {
         playerStatus.OnLightPowerChanged += UpdateLightPower;
@@ -81,6 +84,7 @@ public class PlayerLight : MonoBehaviour
                 if (horrorCreatureEffectCooldownTimer <= 0) {
                     horrorCreatureEffectCooldownTimer = horrorCreatureEffectCooldown;
                     playerStatus.LoseSanity(horrorCreatureEffectSanityLoss);
+                    Tween.ShakeCamera(mainCamera, strengthFactor: 0.8f, duration: 0.5f, frequency: 10);
                 }
             }
             else

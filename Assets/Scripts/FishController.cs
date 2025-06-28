@@ -6,6 +6,10 @@ public class FishController : MonoBehaviour
 
     [SerializeField] private FishEffectType fishEffectType;
 
+    [SerializeField] private float speed = 2f;
+
+    
+
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             playerStatus.ApplyEffect(fishEffectType);
