@@ -14,10 +14,12 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     float speed = 5f;
 
+    bool canMove = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GameManager.Instance.OnGameStateChanged += OnGameStateChanged;
     }
 
     // Update is called once per frame
@@ -38,7 +40,10 @@ public class PlayerControl : MonoBehaviour
 
         //Negate gravity by adding force in the opposite direction of gravity
         rb.AddForce(-Physics2D.gravity * rb.mass * 3);
+    }
 
-
+    private void OnGameStateChanged(GameState newState)
+    {
+        canMove = newState == GameState.Game;
     }
 }

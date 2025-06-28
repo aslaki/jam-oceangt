@@ -10,6 +10,9 @@ public class CameraController : MonoBehaviour
 
     private Camera mainCamera;
 
+    [SerializeField]
+    private Transform player;
+
     private void OnEnable()
     {
         GameManager.Instance.OnGameStateChanged += OnGameStateChanged;
@@ -33,9 +36,23 @@ public class CameraController : MonoBehaviour
             case GameState.Menu:
                 mainCamera.transform.position = new Vector3(0, 10, -10);
                 break;
-            case GameState.IntroSequence:        
-                StartCoroutine(Tween.TweenToTarget(cameraGamePosition, this.transform ,startGameTweenDuration));
+            case GameState.IntroSequence:
+                StartCoroutine(Tween.TweenToTarget(cameraGamePosition, this.transform, startGameTweenDuration));
                 break;
         }
+    }
+
+    void FixedUpdate()
+    {
+        if (GameManager.Instance.currentGameState == GameState.Game)
+        {
+            // Follow the player
+            if (player != null)
+            {
+                Vector3 targetPosition = player.position;
+                targetPosition.z = mainCamera.transform.position.z; // Keep the camera's z position constant
+                mainCamera.transform.position = targetPosition;
+            }
+        }   
     }
 }

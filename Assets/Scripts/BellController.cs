@@ -15,7 +15,19 @@ public class BellController : MonoBehaviour
     {
 
     }
-    
+
+    void FixedUpdate()
+    {
+        if (GameManager.Instance.currentGameState != GameState.IntroSequence)
+        {
+            if (bellPosition.position == this.transform.position)
+            {
+                GameManager.Instance.OnExitIntro();
+            }
+        }
+        
+    }
+
     private void OnGameStateChanged(GameState newState)
     {
         if (newState == GameState.IntroSequence)
@@ -23,4 +35,5 @@ public class BellController : MonoBehaviour
             StartCoroutine(Tween.TweenToTarget(bellPosition, this.transform, 5f));
         }
     }
+    
 }
