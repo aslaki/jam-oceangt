@@ -6,6 +6,6 @@ public class UIManager : MonoBehaviour
     public void OnStartButtonClicked()
     {
         startMenu.SetActive(false);
-        GameManager.Instance.OnStartGame();
+        GameManager.Instance.OnStartIntro();
     }
 }

@@ -48,10 +48,14 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void OnStartIntro()
+    {
+        ChangeGameStateChanged(GameState.IntroSequence);
+    }
 
     public void OnStartGame()
     {
-        ChangeGameStateChanged(GameState.IntroSequence);
+        ChangeGameStateChanged(GameState.Game);
     }
     
     public void OnExitIntro()
