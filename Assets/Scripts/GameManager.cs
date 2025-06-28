@@ -5,6 +5,7 @@ using System;
 public enum GameState
 {
     Menu,
+    IntroSequence,
     Game
 }
 
@@ -44,6 +45,6 @@ public class GameManager : MonoBehaviour
 
     public void OnStartGame()
     {
-        ChangeGameStateChanged(GameState.Game);
+        ChangeGameStateChanged(GameState.IntroSequence);
     }
 }
