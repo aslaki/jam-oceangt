@@ -1501,6 +1501,18 @@ PrefabInstance:
       value: Bell
       objectReference: {fileID: 0}
     - target: {fileID: 6717670332707846987, guid: c5fa26f2556d6c740a09a636a8c41ae9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717670332707846987, guid: c5fa26f2556d6c740a09a636a8c41ae9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717670332707846987, guid: c5fa26f2556d6c740a09a636a8c41ae9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717670332707846987, guid: c5fa26f2556d6c740a09a636a8c41ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.596165
       objectReference: {fileID: 0}
