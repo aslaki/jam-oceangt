@@ -97,6 +97,10 @@ using UnityEngine.SceneManagement;
                 case FishEffectType.Oxygen:
                     GainOxygen(10);
                     break;
+                case FishEffectType.Predator:
+                    LoseSanity(20);
+                    DepleteOxygen(20);
+                    break;
             }
         }
 

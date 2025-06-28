@@ -2,5 +2,6 @@ public enum FishEffectType
 {
     Light,
     Sanity,
-    Oxygen
+    Oxygen,
+    Predator
 } 

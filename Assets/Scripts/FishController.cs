@@ -9,7 +9,9 @@ public class FishController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             playerStatus.ApplyEffect(fishEffectType);
-            Destroy(gameObject);
+            if (fishEffectType != FishEffectType.Predator) {
+                Destroy(gameObject);
+            }
         }
     }
 }
