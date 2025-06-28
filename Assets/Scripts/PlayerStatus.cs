@@ -20,6 +20,12 @@ using UnityEngine.SceneManagement;
         [SerializeField]
         private float currentSanity;
 
+        [Header("Light settings")]
+        [SerializeField]
+        private float maxLightPower = 100f;
+        [SerializeField]
+        private float currentLightPower;
+
         [Header("Status")]
         [SerializeField]
         private bool isDead = false;
@@ -27,6 +33,7 @@ using UnityEngine.SceneManagement;
         // Events
         public event Action<float> OnOxygenChanged;
         public event Action<float> OnSanityChanged;
+        public event Action<float> OnLightPowerChanged;
         public event Action OnPlayerDied;
 
         // Properties
@@ -34,6 +41,7 @@ using UnityEngine.SceneManagement;
         public float CurrentOxygen => currentOxygen;
         public float MaxSanity => maxSanity;
         public float CurrentSanity => currentSanity;
+        public float CurrentLightPower => currentLightPower;
         public bool IsDead => isDead;
 
         // Normalized health value (0-1)
@@ -74,6 +82,26 @@ using UnityEngine.SceneManagement;
             isDead = false;
             OnOxygenChanged?.Invoke(oxygenPercentage);
             OnSanityChanged?.Invoke(sanityPercentage);
+        }
+
+        public void ApplyEffect(FishEffectType fishEffectType) {
+            switch (fishEffectType) {
+                case FishEffectType.Light:
+                    IncreaseLightPower(10);
+                    break;
+                case FishEffectType.Sanity:
+                    GainSanity(10);
+                    break;
+                case FishEffectType.Oxygen:
+                    GainOxygen(10);
+                    break;
+            }
+        }
+
+        public void IncreaseLightPower(float lightPowerAmount)
+        {
+            currentLightPower = Mathf.Min(maxLightPower, currentLightPower + lightPowerAmount);
+            OnLightPowerChanged?.Invoke(currentLightPower);
         }
 
         public void DepleteOxygen(float oxygenAmount)
