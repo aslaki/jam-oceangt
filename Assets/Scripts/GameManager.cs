@@ -6,7 +6,8 @@ public enum GameState
 {
     Menu,
     IntroSequence,
-    Game
+    Game,
+    Dead
 }
 
 public class GameManager : MonoBehaviour
@@ -58,9 +59,14 @@ public class GameManager : MonoBehaviour
     {
         ChangeGameStateChanged(GameState.Game);
     }
-    
+
     public void OnExitIntro()
     {
         ChangeGameStateChanged(GameState.Game);
+    }
+    
+    public void OnPlayerDied()
+    {
+        ChangeGameStateChanged(GameState.Dead);
     }
 }
