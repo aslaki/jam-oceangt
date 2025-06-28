@@ -24,11 +24,15 @@ public class IntroSequence : MonoBehaviour
 
     [SerializeField]
     private float finalCameraSize = 15f;
-    
+
+    [SerializeField]
+    private GameObject player;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         GameManager.Instance.OnGameStateChanged += OnGameStateChanged;
+        player.SetActive(false); // Hide player during intro
     }
 
     void OnDisable()
@@ -57,10 +61,8 @@ public class IntroSequence : MonoBehaviour
 
         Tween.Custom(globalLight.intensity, endIntensity, duration: 11f,
              onValueChange: newVal => globalLight.intensity = newVal);
-             
+
         // Create swinging motion - pendulum-like movement
-        // Swing horizontally (left and right)
-        var swingDistance = 0.5f; // Adjust this value to control swing intensity
         var swingDuration = 1.5f; // Time for one complete swing cycle
 
         // Start swinging immediately and loop indefinitely
@@ -70,7 +72,7 @@ public class IntroSequence : MonoBehaviour
         var swingAngle = 15f; // Degrees of rotation swing
         Tween.LocalEulerAngles(bell, Vector3.zero, new Vector3(0, 0, swingAngle), swingDuration, Ease.InOutSine, -1, CycleMode.Yoyo);
 
-         // Move camera to end position
+        // Move camera to end position
         yield return Tween.PositionY(Camera.main.transform, cameraEndPosition.position.y, 10f).ToYieldInstruction();
 
         yield return new WaitForSeconds(1f);
@@ -89,5 +91,6 @@ public class IntroSequence : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         GameManager.Instance.OnStartGame();
+        player.SetActive(true); // Show player after intro
     }
 }
