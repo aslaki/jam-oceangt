@@ -973,6 +973,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 440183066565011564, guid: f934d2a2a8c35410aaa8ad6412f1a73f, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2597078795307353490, guid: f934d2a2a8c35410aaa8ad6412f1a73f, type: 3}
       propertyPath: m_Name
       value: PlayerHUD

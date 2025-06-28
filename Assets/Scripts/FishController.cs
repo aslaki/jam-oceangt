@@ -15,6 +15,9 @@ public class FishController : MonoBehaviour
     [SerializeField] private float maxVerticalAmplitude = 0.8f;
     [SerializeField] private float minPauseTime = 0.5f;
     [SerializeField] private float maxPauseTime = 3.0f;
+    [SerializeField] private float fleeSpeed = 3f;
+    [SerializeField] private float fleeDuration = 1f;
+    [SerializeField] private float fleePauseDuration = 0.3f;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -23,6 +26,7 @@ public class FishController : MonoBehaviour
     private float currentMoveDistance;
     private float currentVerticalAmplitude;
     private bool isPaused = false;
+    private bool isFleeing = false;
 
     private void Start()
     {
@@ -42,7 +46,7 @@ public class FishController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isPaused) return;
+        if (isPaused || isFleeing) return;
 
         float horizontalVelocity = moveDirection.x * speed;
         float verticalVelocity = Mathf.Cos(Time.time * verticalSpeed) * currentVerticalAmplitude;
@@ -81,5 +85,41 @@ public class FishController : MonoBehaviour
     public FishEffectType GetEffectType()
     {
         return fishEffectType;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Player") {
+            if (!isFleeing)
+            {
+                StopAllCoroutines();
+                StartCoroutine(Flee(other.transform));
+            }
+        }
+    }
+
+    private IEnumerator Flee(Transform playerTransform)
+    {
+        isFleeing = true;
+        isPaused = false;
+
+        rb.linearVelocity = Vector2.zero;
+        yield return new WaitForSeconds(fleePauseDuration);
+
+        Vector2 fleeDirection = (transform.position - playerTransform.position).normalized;
+        spriteRenderer.flipX = fleeDirection.x < 0;
+
+        rb.linearVelocity = fleeDirection * fleeSpeed;
+
+        yield return new WaitForSeconds(fleeDuration);
+
+        rb.linearVelocity = Vector2.zero;
+        
+        initialPosition = transform.position;
+        moveDirection = (Random.value > 0.5f) ? Vector2.right : Vector2.left;
+        UpdateSpriteDirection();
+        currentMoveDistance = Random.Range(minMoveDistance, maxMoveDistance);
+        currentVerticalAmplitude = Random.Range(minVerticalAmplitude, maxVerticalAmplitude);
+        
+        isFleeing = false;
     }
 }

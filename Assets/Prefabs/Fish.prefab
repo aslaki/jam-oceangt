@@ -157,6 +157,9 @@ MonoBehaviour:
   maxVerticalAmplitude: 0.8
   minPauseTime: 0.5
   maxPauseTime: 3
+  fleeSpeed: 2.5
+  fleeDuration: 0.6
+  fleePauseDuration: 0.2
 --- !u!50 &8368547316862536591
 Rigidbody2D:
   serializedVersion: 5
