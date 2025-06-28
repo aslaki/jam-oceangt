@@ -16,6 +16,15 @@ public class PlayerControl : MonoBehaviour
 
     bool canMove = false;
 
+    [SerializeField]
+    bool isFacingLeft = true;
+
+    [SerializeField]
+    Transform playerHead;
+
+    [SerializeField]
+    float angle;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,6 +42,8 @@ public class PlayerControl : MonoBehaviour
 
     void FixedUpdate()
     {
+
+
         rb.AddForce(new Vector2(
             (moveRight ? 1 : 0) - (moveLeft ? 1 : 0),
             (moveUp ? 1 : 0) - (moveDown ? 1 : 0)
@@ -40,10 +51,52 @@ public class PlayerControl : MonoBehaviour
 
         //Negate gravity by adding force in the opposite direction of gravity
         rb.AddForce(-Physics2D.gravity * rb.mass * 3);
+        if (moveLeft || moveRight)
+        {
+            isFacingLeft = moveLeft && !moveRight;
+        }
+
+        if(isFacingLeft)
+        {
+            rb.transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+             rb.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        
+        RotateHeadTowardsMouse();
     }
 
     private void OnGameStateChanged(GameState newState)
     {
         canMove = newState == GameState.Game;
+    }
+
+    private void RotateHeadTowardsMouse()
+    {
+        // Get mouse position in world space
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        mousePosition.z = 0f; // Ensure z is 0 for 2D
+        Vector2 direction;
+        // Calculate direction from head to mouse
+        if (isFacingLeft)
+        {
+            direction = -((mousePosition - playerHead.position).normalized);
+        }
+        else
+        {
+            // If facing right, calculate direction normally
+           direction = (mousePosition - playerHead.position).normalized;
+        }
+
+        // Calculate angle in degrees
+        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        angle = Mathf.Clamp(angle, -45f, 45f);
+        // Add angle restrictions 
+
+       
+        // Apply rotation to the head
+        playerHead.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }

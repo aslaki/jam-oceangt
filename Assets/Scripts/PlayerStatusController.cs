@@ -12,7 +12,9 @@ public class PlayerStatusController : MonoBehaviour
 
     private void Update()
     {
-        if(GameManager.Instance.currentGameState != GameState.Game)
+        
+        if(GameManager.Instance == null ||
+            GameManager.Instance.currentGameState != GameState.Game)
             return;
         playerStatus.DepleteOxygen(oxygenDepletionRate * Time.deltaTime);
         playerStatus.LoseSanity(sanityDepletionRate * Time.deltaTime);

@@ -251,7 +251,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.00000008567929, y: 0.5}
-  m_ConnectedAnchor: {x: -0.0069999695, y: 0.47146606}
+  m_ConnectedAnchor: {x: -0.007000018, y: 0.47146237}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -447,7 +447,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1474411516368296149}
   speed: 3
-  playerHead: {fileID: 0}
 --- !u!1 &5942527961144730150
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +579,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.07115206, y: 0.5122953}
-  m_ConnectedAnchor: {x: 0, y: -1.0000153}
+  m_ConnectedAnchor: {x: 0.000000009313226, y: -1}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -793,7 +792,7 @@ HingeJoint2D:
   m_BreakAction: 2
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.0023588743, y: 0.9426121}
-  m_ConnectedAnchor: {x: 0.017064558, y: -0.39957327}
+  m_ConnectedAnchor: {x: 0.017064847, y: -0.3995801}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
