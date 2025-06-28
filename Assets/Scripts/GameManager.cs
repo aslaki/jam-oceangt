@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         }
 
         OnGameStateChanged?.Invoke(newState);
+        currentGameState = newState;
     }
 
 
