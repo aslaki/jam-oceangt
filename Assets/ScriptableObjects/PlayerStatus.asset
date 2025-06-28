@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: PlayerStatus
   m_EditorClassIdentifier: 
   maxOxygen: 100
-  currentOxygen: 100
-  maxSanity: 100
-  currentSanity: 100
-  isDead: 0
+  currentOxygen: 29.399427
+  maxSanity: 2000
+  currentSanity: 0
+  maxLightPower: 100
+  currentLightPower: 5
+  isDead: 1

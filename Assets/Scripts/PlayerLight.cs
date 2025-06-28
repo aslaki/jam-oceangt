@@ -12,8 +12,14 @@ public class PlayerLight : MonoBehaviour
 
     private const float coneAngleOffset = 70f;
     private const float coneDistanceOffsetFactor = 0.4f;
-
     [SerializeField] private PlayerStatus playerStatus;
+
+    [Tooltip("The cooldown time for the horror creature effect.")]
+    [SerializeField] private float horrorCreatureEffectCooldown = 1f;
+    private float horrorCreatureEffectCooldownTimer = 1f;
+
+    [Tooltip("The sanity loss for the horror creature effect.")]
+    [SerializeField] private float horrorCreatureEffectSanityLoss = 30f;
 
     private void OnEnable() {
         playerStatus.OnLightPowerChanged += UpdateLightPower;
@@ -41,7 +47,7 @@ public class PlayerLight : MonoBehaviour
 
     private void UpdateLightPower(float lightPower) {
         spotLight.pointLightOuterRadius = lightPower;
-    }
+    }   
 
     /// <summary>
     /// Casts rays in a cone to detect enemies. The cone's angle and distance
@@ -65,11 +71,17 @@ public class PlayerLight : MonoBehaviour
 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, coneDistance, enemyLayer);
 
+            horrorCreatureEffectCooldownTimer -= Time.deltaTime;
+
             if (hit.collider != null)
             {
                 // Enemy detected
                 Debug.Log("Enemy detected: " + hit.collider.name);
                 Debug.DrawLine(transform.position, hit.point, Color.red);
+                if (horrorCreatureEffectCooldownTimer <= 0) {
+                    horrorCreatureEffectCooldownTimer = horrorCreatureEffectCooldown;
+                    playerStatus.LoseSanity(horrorCreatureEffectSanityLoss);
+                }
             }
             else
             {
