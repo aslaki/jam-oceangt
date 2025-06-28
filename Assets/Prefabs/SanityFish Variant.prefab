@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SanityFish Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3590021529909418614, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: fishEffectType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6413024070122318556, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.44
