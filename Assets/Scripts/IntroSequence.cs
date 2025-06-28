@@ -70,7 +70,7 @@ public class IntroSequence : MonoBehaviour
 
         // Add rotation swinging (bell tilting back and forth)
         var swingAngle = 15f; // Degrees of rotation swing
-        Tween.LocalEulerAngles(bell, Vector3.zero, new Vector3(0, 0, swingAngle), swingDuration, Ease.InOutSine, -1, CycleMode.Yoyo);
+        var swingTween = Tween.LocalEulerAngles(bell, Vector3.zero, new Vector3(0, 0, swingAngle), swingDuration, Ease.InOutSine, -1, CycleMode.Yoyo);
 
         // Move camera to end position
         yield return Tween.PositionY(Camera.main.transform, cameraEndPosition.position.y, 10f).ToYieldInstruction();
@@ -78,6 +78,7 @@ public class IntroSequence : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         yield return Tween.ShakeCamera(Camera.main, strengthFactor: 0.5f).ToYieldInstruction();
+        swingTween.Complete(); // Stop the swinging motion
 
         Camera.main.backgroundColor = Color.black;
 

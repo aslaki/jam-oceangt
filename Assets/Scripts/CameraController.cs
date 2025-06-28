@@ -4,9 +4,6 @@ using System.Collections;
 public class CameraController : MonoBehaviour
 {
     private Vector2 cameraMenuPosition;
-    [SerializeField] private Transform cameraGamePosition;
-
-    [SerializeField] private float startGameTweenDuration = 5f;
 
     private Camera mainCamera;
 
