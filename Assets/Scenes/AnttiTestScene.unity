@@ -1236,22 +1236,6 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1571555720}
-    - target: {fileID: 7273950041242621719, guid: 4085bf0a3d9c54962ba622022da25316, type: 3}
-      propertyPath: playerStatus
-      value: 
-      objectReference: {fileID: 11400000, guid: 98102957f0f8c4c54b51b297a7f2a343, type: 2}
-    - target: {fileID: 7273950041242621719, guid: 4085bf0a3d9c54962ba622022da25316, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 7273950041242621719, guid: 4085bf0a3d9c54962ba622022da25316, type: 3}
-      propertyPath: horrorCreatureEffectSanityLoss
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8817954151562185225, guid: 4085bf0a3d9c54962ba622022da25316, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

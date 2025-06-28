@@ -74,7 +74,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 50
   m_PointLightOuterAngle: 120
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 9.03
+  m_PointLightOuterRadius: 5
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -100,5 +100,9 @@ MonoBehaviour:
   spotLight: {fileID: 8817954151562185225}
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   numberOfRays: 30
+  playerStatus: {fileID: 11400000, guid: 98102957f0f8c4c54b51b297a7f2a343, type: 2}
+  horrorCreatureEffectCooldown: 1
+  horrorCreatureEffectSanityLoss: 5
+  mainCamera: {fileID: 0}
