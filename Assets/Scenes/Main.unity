@@ -680,7 +680,7 @@ MonoBehaviour:
   bellEndPosition: {fileID: 265849712}
   bell: {fileID: 8425536791615672607}
   globalLight: {fileID: 413142832}
-  endIntensity: 0.1
+  endIntensity: 0
 --- !u!4 &433847265
 Transform:
   m_ObjectHideFlags: 0
