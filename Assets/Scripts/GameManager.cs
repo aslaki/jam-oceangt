@@ -12,7 +12,7 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
     public event Action<GameState> OnGameStateChanged;
-    
+
     private static GameManager _instance;
 
     public static GameManager Instance { get { return _instance; } }
@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
-        } else {
+        }
+        else
+        {
             _instance = this;
         }
     }
@@ -36,6 +38,8 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Menu:
                 break;
+            case GameState.IntroSequence:
+                break;
             case GameState.Game:
                 break;
         }
@@ -43,8 +47,15 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
     }
 
+
+
     public void OnStartGame()
     {
         ChangeGameStateChanged(GameState.IntroSequence);
+    }
+    
+    public void OnExitIntro()
+    {
+        ChangeGameStateChanged(GameState.Game);
     }
 }
