@@ -21,6 +21,10 @@ public class IntroSequence : MonoBehaviour
 
     [SerializeField]
     private float endIntensity = 0.1f;
+
+    [SerializeField]
+    private float finalCameraSize = 15f;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -73,11 +77,13 @@ public class IntroSequence : MonoBehaviour
 
         yield return Tween.ShakeCamera(Camera.main, strengthFactor: 0.5f).ToYieldInstruction();
 
+        Camera.main.backgroundColor = Color.black;
+
         Tween.PositionX(Camera.main.transform, bellEndPosition.position.x, 2f, Ease.InOutSine);
         Tween.PositionY(Camera.main.transform, bellEndPosition.position.y, 2f, Ease.InOutSine);
 
         // Zoom in on the bell by changing camera size
-        yield return Tween.Custom(Camera.main.orthographicSize, 10f, duration: 2f,
+        yield return Tween.Custom(Camera.main.orthographicSize, finalCameraSize, duration: 2f,
             onValueChange: newVal => Camera.main.orthographicSize = newVal).ToYieldInstruction();
 
         yield return new WaitForSeconds(1f);
