@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8368547316862536591}
   m_Layer: 6
   m_Name: Fish
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,13 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f871c7a45084980833e23759d7b536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStatus: {fileID: 11400000, guid: 98102957f0f8c4c54b51b297a7f2a343, type: 2}
   fishEffectType: 3
   speed: 2
   minMoveDistance: 2
   maxMoveDistance: 8
   verticalSpeed: 3
-  verticalAmplitude: 0.5
+  minVerticalAmplitude: 0.2
+  maxVerticalAmplitude: 0.8
   minPauseTime: 0.5
   maxPauseTime: 3
 --- !u!50 &8368547316862536591
