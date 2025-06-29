@@ -57,9 +57,10 @@ using UnityEngine.SceneManagement;
         public float CurrentSanity => currentSanity;
         public float CurrentLightPower => currentLightPower;
         public bool IsDead => isDead;
+        public bool isImmortal = false;
 
         // Normalized health value (0-1)
-        private float oxygenPercentage => Mathf.Clamp01(currentOxygen / maxOxygen);
+    private float oxygenPercentage => Mathf.Clamp01(currentOxygen / maxOxygen);
         private float sanityPercentage => Mathf.Clamp01(currentSanity / maxSanity);
 
         // Reset status when scene is reloaded
@@ -97,6 +98,7 @@ using UnityEngine.SceneManagement;
             isDead = false;
             fishEatCount = 0;
             currentMutationIndex = 0;
+            isImmortal = false;
             OnOxygenChanged?.Invoke(oxygenPercentage);
             OnSanityChanged?.Invoke(sanityPercentage);
             OnLightPowerChanged?.Invoke(currentLightPower);
@@ -121,8 +123,7 @@ using UnityEngine.SceneManagement;
             fishEatCount++;
             Debug.Log($"Fish eaten: {fishEatCount}");
             for(int i = 0; i < mutationThresholds.Length; i++) {
-                Debug.Log($"Checking mutation threshold {i}: {mutationThresholds[i]} against fishEatCount: {fishEatCount}");
-                if (fishEatCount == mutationThresholds[i])
+            if (fishEatCount == mutationThresholds[i])
             {
                 currentMutationIndex++;
                 OnTriggerMutation?.Invoke(currentMutationIndex); // Trigger mutation event
@@ -132,6 +133,7 @@ using UnityEngine.SceneManagement;
             }
             if (fishEatCount >= requiredFishEatCount) {
                 Debug.Log("Player has eaten enough fish to win!");
+                isImmortal = true; // Set player to immortal state
                 OnPlayerWon?.Invoke();
             }
             
@@ -151,7 +153,7 @@ using UnityEngine.SceneManagement;
 
         public void DepleteOxygen(float oxygenAmount)
         {
-            if (isDead)
+            if (isDead || isImmortal)
                 return;
 
             currentOxygen = Mathf.Max(0, currentOxygen - oxygenAmount);
@@ -172,7 +174,7 @@ using UnityEngine.SceneManagement;
 
         public void LoseSanity(float sanityAmount)
         {
-            if (isDead)
+            if (isDead || isImmortal)
                 return;
 
             currentSanity = Mathf.Max(0, currentSanity - sanityAmount);
