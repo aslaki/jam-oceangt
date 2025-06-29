@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: ff7b7f724385f514aa1fb216df033374
+guid: b772d3da792c54dffa9cd9f0b980c549
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4548796474974412338
-    second: Boat_0
+      213: 7718184914541098302
+    second: titlescreen_music_0
+  - first:
+      213: 7826855352683972350
+    second: titlescreen_music_1
+  - first:
+      213: 5715633601040728134
+    second: titlescreen_music_2
+  - first:
+      213: -2954308817391905767
+    second: titlescreen_music_3
+  - first:
+      213: -1718558122950668903
+    second: titlescreen_music_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boat_0
+      name: titlescreen_music_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 297
-        width: 1588
-        height: 1564
+        x: 0
+        y: 0
+        width: 45
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec1e991e4bd6fd0c0800000000000000
-      internalID: -4548796474974412338
+      spriteID: e35300e79408c1b60800000000000000
+      internalID: 7718184914541098302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titlescreen_music_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef6c71d89739e9c60800000000000000
+      internalID: 7826855352683972350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titlescreen_music_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 3
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640c1583a72025f40800000000000000
+      internalID: 5715633601040728134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titlescreen_music_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 3
+        width: 13
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9141d8e78cf2007d0800000000000000
+      internalID: -2954308817391905767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titlescreen_music_4
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99dc9a31e747628e0800000000000000
+      internalID: -1718558122950668903
       vertices: []
       indices: 
       edges: []
@@ -135,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Boat_0: -4548796474974412338
+      titlescreen_music_0: 7718184914541098302
+      titlescreen_music_1: 7826855352683972350
+      titlescreen_music_2: 5715633601040728134
+      titlescreen_music_3: -2954308817391905767
+      titlescreen_music_4: -1718558122950668903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

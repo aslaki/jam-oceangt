@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: ff7b7f724385f514aa1fb216df033374
+guid: f6aed242533384c4b97bdfb7afa4c44e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4548796474974412338
-    second: Boat_0
+      213: 8467939169947973666
+    second: titlescreen_back_0
+  - first:
+      213: -8408563167244070117
+    second: titlescreen_back_1
+  - first:
+      213: -523584615666362753
+    second: titlescreen_back_2
+  - first:
+      213: 8534660208552181973
+    second: titlescreen_back_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boat_0
+      name: titlescreen_back_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 297
-        width: 1588
-        height: 1564
+        x: 0
+        y: 0
+        width: 41
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec1e991e4bd6fd0c0800000000000000
-      internalID: -4548796474974412338
+      spriteID: 2287d5c5fc9248570800000000000000
+      internalID: 8467939169947973666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titlescreen_back_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2
+        width: 46
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b13dbf09958ce4b80800000000000000
+      internalID: -8408563167244070117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titlescreen_back_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 7
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f76d85de09adbb8f0800000000000000
+      internalID: -523584615666362753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titlescreen_back_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 3
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d00a69bd34317670800000000000000
+      internalID: 8534660208552181973
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Boat_0: -4548796474974412338
+      titlescreen_back_0: 8467939169947973666
+      titlescreen_back_1: -8408563167244070117
+      titlescreen_back_2: -523584615666362753
+      titlescreen_back_3: 8534660208552181973
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

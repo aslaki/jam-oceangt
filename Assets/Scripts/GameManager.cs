@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private PlayerStatus playerStatus;
 
+    [SerializeField] private Camera mainMenuCamera;
+
     private void OnEnable() {
         playerStatus.OnPlayerDied += OnPlayerDied;
     }
@@ -48,12 +50,16 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.Menu:
+                mainMenuCamera.gameObject.SetActive(true);
                 break;
             case GameState.IntroSequence:
+                mainMenuCamera.gameObject.SetActive(false); 
                 break;
             case GameState.Game:
+                mainMenuCamera.gameObject.SetActive(false);
                 break;
             case GameState.Dead:
+                mainMenuCamera.gameObject.SetActive(false);
                 break;
         }
 
