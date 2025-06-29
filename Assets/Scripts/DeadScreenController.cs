@@ -21,7 +21,7 @@ public class DeadScreenController : MonoBehaviour
     public void OnRestartButtonClicked()
     {
         Debug.Log("Restarting game...");
-        SceneManager.LoadScene("GameInit");
+        SceneManager.LoadScene("Main");
     }
     public void OnExitButtonClicked()
     {
