@@ -83,8 +83,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStatus: {fileID: 11400000, guid: 98102957f0f8c4c54b51b297a7f2a343, type: 2}
-  sanityDepletionRate: 5
-  oxygenDepletionRate: 5
+  sanityDepletionRate: 3
+  oxygenDepletionRate: 2
   playerAudioSource: {fileID: 0}
   predatorHitClips:
   - {fileID: 8300000, guid: bc16f1957751c4de0a54a4c842de2755, type: 3}
@@ -773,7 +773,7 @@ MonoBehaviour:
   numberOfRays: 30
   playerStatus: {fileID: 11400000, guid: 98102957f0f8c4c54b51b297a7f2a343, type: 2}
   horrorCreatureEffectCooldown: 1
-  horrorCreatureEffectSanityLoss: 5
+  horrorCreatureEffectSanityLoss: 10
   mainCamera: {fileID: 0}
 --- !u!1 &4225807489517866827
 GameObject:
