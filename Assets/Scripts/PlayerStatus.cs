@@ -29,11 +29,24 @@ using UnityEngine.SceneManagement;
         [Header("Status")]
         [SerializeField]
         private bool isDead = false;
+        
+        [SerializeField]
+        private int fishEatCount = 0;
 
+        [SerializeField]
+        private int requiredFishEatCount = 38; // Number of fish to eat to win
+        
+        [SerializeField]
+        private int[] mutationThresholds = new int[] { 5, 11, 17, 24, 31, 38 }; // Thresholds for mutations};
+        [SerializeField]
+        private int currentMutationIndex = 0;
         // Events
-        public event Action<float> OnOxygenChanged;
+    public event Action<float> OnOxygenChanged;
         public event Action<float> OnSanityChanged;
         public event Action<float> OnLightPowerChanged;
+
+        public event Action<int> OnTriggerMutation;
+
         public event Action OnPlayerDied;
 
         // Properties
@@ -81,6 +94,8 @@ using UnityEngine.SceneManagement;
             currentSanity = maxSanity;
             currentLightPower = 5f;
             isDead = false;
+            fishEatCount = 0;
+            currentMutationIndex = 0;
             OnOxygenChanged?.Invoke(oxygenPercentage);
             OnSanityChanged?.Invoke(sanityPercentage);
             OnLightPowerChanged?.Invoke(currentLightPower);
@@ -102,6 +117,16 @@ using UnityEngine.SceneManagement;
                     DepleteOxygen(20);
                     break;
             }
+            fishEatCount++;
+            for(int i = 0; i < mutationThresholds.Length; i++) {
+                if (fishEatCount == mutationThresholds[i]) {
+                    currentMutationIndex++;
+                    OnTriggerMutation?.Invoke(currentMutationIndex); // Trigger mutation event
+                    Debug.Log($"Triggered mutation {currentMutationIndex} at fish count {fishEatCount}");
+                }
+            }
+            
+            
         }
 
         public void OnPredatorHit() {
