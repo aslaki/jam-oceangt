@@ -33,9 +33,9 @@ using UnityEngine.SceneManagement;
         [SerializeField]
         private int fishEatCount = 0;
 
-        private int requiredFishEatCount = 38; // Number of fish to eat to win
+        private int requiredFishEatCount = 30; // Number of fish to eat to win
         
-        private int[] mutationThresholds = new int[] { 5, 11, 17, 24, 31, 38 }; // Thresholds for mutations};
+        private int[] mutationThresholds = new int[] { 5, 10, 15, 20, 25, 30 }; // Thresholds for mutations};
 
         [SerializeField]
         private int currentMutationIndex = 0;
