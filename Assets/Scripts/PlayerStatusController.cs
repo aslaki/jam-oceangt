@@ -31,7 +31,7 @@ public class PlayerStatusController : MonoBehaviour
 
 
 
-    private void Awake()
+    private void OnEnable()
     {
         playerStatus.OnTriggerMutation += OnTriggerMutation;
         playerStatus.OnPlayerDied += OnPlayerDied;
