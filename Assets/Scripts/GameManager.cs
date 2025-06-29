@@ -10,6 +10,7 @@ public enum GameState
     Dead
 }
 
+[DefaultExecutionOrder(-99999)]
 public class GameManager : MonoBehaviour
 {
     public event Action<GameState> OnGameStateChanged;
@@ -24,11 +25,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Camera mainMenuCamera;
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         playerStatus.OnPlayerDied += OnPlayerDied;
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         playerStatus.OnPlayerDied -= OnPlayerDied;
     }
 
@@ -53,7 +56,7 @@ public class GameManager : MonoBehaviour
                 mainMenuCamera.gameObject.SetActive(true);
                 break;
             case GameState.IntroSequence:
-                mainMenuCamera.gameObject.SetActive(false); 
+                mainMenuCamera.gameObject.SetActive(false);
                 break;
             case GameState.Game:
                 mainMenuCamera.gameObject.SetActive(false);
@@ -82,7 +85,7 @@ public class GameManager : MonoBehaviour
     {
         ChangeGameStateChanged(GameState.Game);
     }
-    
+
     public void OnPlayerDied()
     {
         ChangeGameStateChanged(GameState.Dead);
