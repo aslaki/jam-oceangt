@@ -24,7 +24,10 @@ public class PlayerLight : MonoBehaviour
 
     [SerializeField] private Camera mainCamera;
 
-    private void OnEnable() {
+    [SerializeField] private float maxConeDistance = 20f;
+
+    private void OnEnable()
+    {
         playerStatus.OnLightPowerChanged += UpdateLightPower;
     }
 
@@ -62,6 +65,7 @@ public class PlayerLight : MonoBehaviour
 
         float coneAngle = spotLight.pointLightOuterAngle - coneAngleOffset;
         float coneDistance = spotLight.pointLightOuterRadius - spotLight.pointLightOuterRadius * coneDistanceOffsetFactor;
+        coneDistance = Mathf.Clamp(coneDistance, 0, maxConeDistance); // Clamp to max distance
         int rays = Mathf.Max(2, numberOfRays); // Ensure at least 2 rays
         float angleStep = coneAngle / (rays - 1);
         float startAngleOffset = -coneAngle / 2;
