@@ -44,6 +44,26 @@ PrefabInstance:
       propertyPath: 'predatorHitClips.Array.data[1]'
       value: 
       objectReference: {fileID: 8300000, guid: 436a1bd50495f4ccb8f1772bbacd3de1, type: 3}
+    - target: {fileID: 4898807305563512525, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: m_Size.x
+      value: 9.345393
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898807305563512525, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: m_Size.y
+      value: 3.087085
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898807305563512525, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.24257573
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898807305563512525, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.50939935
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898807305563512525, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6413024070122318556, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.73

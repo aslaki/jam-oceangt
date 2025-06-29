@@ -48,6 +48,26 @@ PrefabInstance:
       propertyPath: fishEffectType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4898807305563512525, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: m_Size.x
+      value: 9.357388
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898807305563512525, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: m_Size.y
+      value: 4.7559376
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898807305563512525, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.18532553
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898807305563512525, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.60477173
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898807305563512525, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6413024070122318556, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.05
