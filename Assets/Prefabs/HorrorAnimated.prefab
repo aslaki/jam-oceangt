@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 913507334095533538, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
       propertyPath: m_Name
-      value: SanityFishAnimated
+      value: HorrorAnimated
+      objectReference: {fileID: 0}
+    - target: {fileID: 913507334095533538, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3590021529909418614, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
       propertyPath: fishEffectType
