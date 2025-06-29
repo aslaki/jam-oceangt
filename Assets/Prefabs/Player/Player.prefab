@@ -169,11 +169,12 @@ MonoBehaviour:
   playerStatus: {fileID: 11400000, guid: 98102957f0f8c4c54b51b297a7f2a343, type: 2}
   sanityDepletionRate: 3
   oxygenDepletionRate: 2
-  playerAudioSource: {fileID: 0}
+  playerAudioSource: {fileID: 2633147548154677035}
   predatorHitClips:
   - {fileID: 8300000, guid: bc16f1957751c4de0a54a4c842de2755, type: 3}
   - {fileID: 8300000, guid: 82f8b4f2b12be469c8af286c20bcb8c1, type: 3}
   - {fileID: 8300000, guid: dd1c8db5b34cd4408af9b59014737276, type: 3}
+  drowningSound: {fileID: 8300000, guid: ee66ecc685cc84bb798ad6dddcce1fc6, type: 3}
   leftMutationSprite: {fileID: -1788281831475180411, guid: 57b2c0a59f0080347a4762911da54f7b, type: 3}
   armMutationSprite: {fileID: 4657914736615051021, guid: 80a04005f5803b64283b0f51014ed79a, type: 3}
   headMutationSprite: {fileID: 6664482850190572292, guid: 7b90b37ed114e6f4f8339c4064ad20cb, type: 3}
@@ -449,7 +450,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.33066896, y: 3.0839496}
-  m_ConnectedAnchor: {x: -1.1949744, y: -2.3195941}
+  m_ConnectedAnchor: {x: -1.1949778, y: -2.3195896}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -710,7 +711,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 2.755178, y: 0.059936944}
-  m_ConnectedAnchor: {x: 0.935111, y: 1.7789408}
+  m_ConnectedAnchor: {x: 0.93511045, y: 1.7789286}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -1072,7 +1073,7 @@ HingeJoint2D:
   m_BreakAction: 2
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.056570437, y: 2.821945}
-  m_ConnectedAnchor: {x: 0.08802621, y: -1.2686899}
+  m_ConnectedAnchor: {x: 0.08802567, y: -1.268692}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -1407,7 +1408,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 2.7169118, y: -0.035728905}
-  m_ConnectedAnchor: {x: -1.1553528, y: 1.7139301}
+  m_ConnectedAnchor: {x: -1.1553543, y: 1.7139037}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -1595,7 +1596,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.6136101, y: 3.1040409}
-  m_ConnectedAnchor: {x: 0.8490224, y: -2.3015234}
+  m_ConnectedAnchor: {x: 0.8490226, y: -2.301519}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:

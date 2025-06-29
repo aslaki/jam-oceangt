@@ -10,6 +10,7 @@ public class PlayerStatusController : MonoBehaviour
     [SerializeField] private float oxygenDepletionRate = 5f;
     [SerializeField] private AudioSource playerAudioSource;
     [SerializeField] private AudioClip[] predatorHitClips = new AudioClip[3];
+    [SerializeField] private AudioClip drowningSound;
 
     [SerializeField] private Sprite leftMutationSprite;
     [SerializeField] private Sprite armMutationSprite;
@@ -33,12 +34,13 @@ public class PlayerStatusController : MonoBehaviour
     private void Awake()
     {
         playerStatus.OnTriggerMutation += OnTriggerMutation;
+        playerStatus.OnPlayerDied += OnPlayerDied;
     }
 
     private void OnDisable()
     {
         playerStatus.OnTriggerMutation -= OnTriggerMutation;
-        
+        playerStatus.OnPlayerDied -= OnPlayerDied;
     }
     
     private void Update()
@@ -51,10 +53,15 @@ public class PlayerStatusController : MonoBehaviour
         playerStatus.LoseSanity(sanityDepletionRate * Time.deltaTime);
     }
 
+    private void OnPlayerDied()
+    {
+        playerAudioSource.PlayOneShot(drowningSound);
+    }
+
     public void OnPredatorHit()
     {
         playerStatus.OnPredatorHit();
-        playerAudioSource.PlayOneShot(predatorHitClips[Random.Range(0, predatorHitClips.Length)]);
+        playerAudioSource.PlayOneShot(predatorHitClips[Random.Range(0, predatorHitClips.Length)], 0.7f);
     }
 
     private void OnTriggerMutation(int mutationIndex)

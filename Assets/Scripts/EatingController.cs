@@ -22,7 +22,7 @@ public class EatingController : MonoBehaviour
             FishEffectType fishEffectType = other.gameObject.GetComponent<FishController>().GetEffectType();
             if (fishEffectType != FishEffectType.Predator) {
                 playerStatus.ApplyEffect(fishEffectType);
-                playerAudioSource.PlayOneShot(eatingClips[Random.Range(0, eatingClips.Length)]);
+                playerAudioSource.PlayOneShot(eatingClips[Random.Range(0, eatingClips.Length)], 0.7f);
                 Destroy(other.gameObject);
             }
         }
