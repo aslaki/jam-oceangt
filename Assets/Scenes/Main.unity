@@ -380,6 +380,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: -1.0000153
       objectReference: {fileID: 0}
+    - target: {fileID: 3027933422970215324, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
+      propertyPath: playerAudioSource
+      value: 
+      objectReference: {fileID: 957377551}
     - target: {fileID: 5914996273291174201, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
       propertyPath: m_Name
       value: Player
@@ -445,6 +449,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
+--- !u!82 &957377551 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2633147548154677035, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
+  m_PrefabInstance: {fileID: 957377550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1107488597 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5914996273291174201, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
