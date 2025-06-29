@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 // Game state enum
 public enum GameState
@@ -22,14 +23,34 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private PlayerStatus playerStatus;
 
-    [SerializeField] private Camera mainMenuCamera;
+    // [SerializeField] private Camera mainMenuCameraPrefab;
+
+    [SerializeField] private Camera gameCamera;
+
+    private Camera mainMenuCamera;
+    private Canvas mainMenuCanvas;
+
+    [SerializeField] private Canvas mainMenuCanvasPrefab;
 
     private void OnEnable() {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
         playerStatus.OnPlayerDied += OnPlayerDied;
     }
 
     private void OnDisable() {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
         playerStatus.OnPlayerDied -= OnPlayerDied;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Main")
+        {
+            // mainMenuCamera = Instantiate(mainMenuCameraPrefab);
+            SceneManager.SetActiveScene(scene);
+            mainMenuCanvas = Instantiate(mainMenuCanvasPrefab);
+            mainMenuCamera = mainMenuCanvas.GetComponent<Canvas>().worldCamera;
+        }
     }
 
     private void Awake()
@@ -41,7 +62,14 @@ public class GameManager : MonoBehaviour
         else
         {
             _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+            Debug.Log("GameManager Awake");
         }
+    }
+
+    public void SetMainMenuCamera(Camera mainMenuCamera)
+    {
+        this.mainMenuCamera = mainMenuCamera;
     }
 
     private void ChangeGameStateChanged(GameState newState)

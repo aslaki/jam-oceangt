@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 105586997669991330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Waves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 901071366646567905}
   - component: {fileID: 9095919479239093715}
   - component: {fileID: 8999143602520081547}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,8 @@ GameObject:
   - component: {fileID: 1087059026496680918}
   - component: {fileID: 5181893117972799158}
   - component: {fileID: 4608653158681629770}
-  m_Layer: 5
+  - component: {fileID: 8885318344295956783}
+  m_Layer: 8
   m_Name: MainMenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,8 +220,8 @@ Canvas:
   m_GameObject: {fileID: 211513082756213204}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 5840126585481628541, guid: cabd5351c7b0d42d6ae37bec24bd7462, type: 3}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -231,7 +232,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &1087059026496680918
 MonoBehaviour:
@@ -286,6 +287,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startMenu: {fileID: 6418066398765990424}
+--- !u!114 &8885318344295956783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211513082756213204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491c7a55c5e5a45a3b30d85661ae78fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainMenuCameraPrefab: {fileID: 6934584875513430123, guid: cabd5351c7b0d42d6ae37bec24bd7462, type: 3}
 --- !u!1 &1378674423982670276
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +311,7 @@ GameObject:
   - component: {fileID: 5109787359844029629}
   - component: {fileID: 7935626906013276097}
   - component: {fileID: 6373636619139120691}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: waves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +387,7 @@ GameObject:
   - component: {fileID: 8796574107693321644}
   - component: {fileID: 1077319412797379638}
   - component: {fileID: 3941186978895663341}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +490,7 @@ GameObject:
   - component: {fileID: 6552793220918690176}
   - component: {fileID: 2654779675626849199}
   - component: {fileID: 8724801545925003300}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +565,7 @@ GameObject:
   - component: {fileID: 7861521228885818555}
   - component: {fileID: 7131361389915579912}
   - component: {fileID: 3043573766376736879}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +702,7 @@ GameObject:
   - component: {fileID: 7415715044559710974}
   - component: {fileID: 6011491871709607304}
   - component: {fileID: 7415792887172194798}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -895,7 +909,7 @@ GameObject:
   - component: {fileID: 1834500619149753897}
   - component: {fileID: 3399046117908213812}
   - component: {fileID: 4897070092076862444}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1044,7 +1058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3890934031627635731}
   - component: {fileID: 5775823282213691611}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: StartMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1109,7 +1123,7 @@ GameObject:
   - component: {fileID: 6835778968491252797}
   - component: {fileID: 2864669997953313915}
   - component: {fileID: 5210700459419037046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlackWaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1184,7 +1198,7 @@ GameObject:
   - component: {fileID: 2750544322107746606}
   - component: {fileID: 4747822484962117273}
   - component: {fileID: 6466755614888931256}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

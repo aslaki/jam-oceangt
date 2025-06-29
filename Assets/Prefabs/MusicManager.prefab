@@ -43,8 +43,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -8876457130140402076, guid: 7418aed5b353246b3b8bdf16ff4c1818, type: 2}
-  m_audioClip: {fileID: 8300000, guid: bdc002c5f41cb452eb040fd588255029, type: 3}
-  m_Resource: {fileID: 8300000, guid: bdc002c5f41cb452eb040fd588255029, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 483adf4e417b74603a78af43e88f8468, type: 3}
+  m_Resource: {fileID: 8300000, guid: 483adf4e417b74603a78af43e88f8468, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -142,3 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edab6ae4708214741a1ac6d7d51c53d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuMusic: {fileID: 8300000, guid: 483adf4e417b74603a78af43e88f8468, type: 3}
+  introMusic: {fileID: 8300000, guid: bdc002c5f41cb452eb040fd588255029, type: 3}
+  mainMusic: {fileID: 8300000, guid: d8b0b3c7b4e924ec4af54701df943dc9, type: 3}
+  introMusicFadeDuration: 2

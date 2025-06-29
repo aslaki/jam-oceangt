@@ -21,3 +21,4 @@ MonoBehaviour:
   isDead: 0
   fishEatCount: 0
   currentMutationIndex: 0
+  isImmortal: 0

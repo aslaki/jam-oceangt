@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGameState: 0
   playerStatus: {fileID: 11400000, guid: 98102957f0f8c4c54b51b297a7f2a343, type: 2}
+  gameCamera: {fileID: 0}
+  mainMenuCanvasPrefab: {fileID: 7074658490880032626, guid: 0d5c207d192ed4141819675940e0fe3e, type: 3}
