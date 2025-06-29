@@ -104,6 +104,11 @@ using UnityEngine.SceneManagement;
             }
         }
 
+        public void OnPredatorHit() {
+            LoseSanity(20);
+            DepleteOxygen(20);
+        }
+
         public void IncreaseLightPower(float lightPowerAmount)
         {
             currentLightPower = Mathf.Min(maxLightPower, currentLightPower + lightPowerAmount);

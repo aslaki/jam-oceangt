@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PredatorFish Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3590021529909418614, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: 'predatorHitClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d84406e32c86481b84da71d7802192a, type: 3}
+    - target: {fileID: 3590021529909418614, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
+      propertyPath: 'predatorHitClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 436a1bd50495f4ccb8f1772bbacd3de1, type: 3}
     - target: {fileID: 6413024070122318556, guid: 9525022f6ac56484ba914137614ae6fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.73

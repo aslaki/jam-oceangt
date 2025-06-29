@@ -18,7 +18,9 @@ public class FishController : MonoBehaviour
     [SerializeField] private float fleeSpeed = 3f;
     [SerializeField] private float fleeDuration = 1f;
     [SerializeField] private float fleePauseDuration = 0.3f;
+    [SerializeField] private AudioClip[] predatorHitClips = new AudioClip[2];
 
+    private AudioSource fishAudioSource;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Vector2 moveDirection = Vector2.right;
@@ -33,7 +35,7 @@ public class FishController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         initialPosition = transform.position;
-
+        fishAudioSource = GetComponent<AudioSource>();
         if (Random.value > 0.5f)
         {
             moveDirection = Vector2.left;
@@ -88,9 +90,19 @@ public class FishController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Player") {
-            if (!isFleeing)
-            {
+
+        if (fishEffectType == FishEffectType.Predator) {
+            if (other.gameObject.tag == "PredatorFishCollider") {
+                other.gameObject.GetComponent<PlayerStatusController>().OnPredatorHit();
+                fishAudioSource.PlayOneShot(predatorHitClips[Random.Range(0, predatorHitClips.Length)]);
+            }
+            if (!isFleeing) {
+                StopAllCoroutines();
+                StartCoroutine(Flee(other.transform));
+            }
+        }
+        else if (other.gameObject.tag == "Player") {
+            if (!isFleeing) {
                 StopAllCoroutines();
                 StartCoroutine(Flee(other.transform));
             }

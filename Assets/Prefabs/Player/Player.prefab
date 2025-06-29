@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8233738945701862752}
-  - component: {fileID: 7895987382771954847}
   - component: {fileID: 2633147548154677035}
   m_Layer: 0
   m_Name: Player
@@ -34,21 +33,6 @@ Transform:
   - {fileID: 8224609104266196917}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7895987382771954847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5914996273291174201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa134b504701a4878873afabce122f48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStatus: {fileID: 11400000, guid: 98102957f0f8c4c54b51b297a7f2a343, type: 2}
-  sanityDepletionRate: 5
-  oxygenDepletionRate: 5
 --- !u!82 &2633147548154677035
 AudioSource:
   m_ObjectHideFlags: 0
