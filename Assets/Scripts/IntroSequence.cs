@@ -8,6 +8,9 @@ using UnityEngine.Rendering.Universal;
 public class IntroSequence : MonoBehaviour
 {
     [SerializeField]
+    private AudioSource introAudioSource;
+
+    [SerializeField]
     private Transform cameraEndPosition;
 
     [SerializeField]
@@ -31,6 +34,7 @@ public class IntroSequence : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        introAudioSource = GetComponent<AudioSource>();
         GameManager.Instance.OnGameStateChanged += OnGameStateChanged;
         player.SetActive(false); // Hide player during intro
     }
@@ -59,6 +63,7 @@ public class IntroSequence : MonoBehaviour
         // Move bell to position
         bell.gameObject.GetComponent<BellController>().OnBellSubmerge();
         Tween.Position(bell, bellEndPosition.position, 11f);
+        introAudioSource.Play();
 
         Tween.Custom(globalLight.intensity, endIntensity, duration: 11f,
              onValueChange: newVal => globalLight.intensity = newVal);
