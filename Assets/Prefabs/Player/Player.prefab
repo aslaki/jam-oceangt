@@ -169,11 +169,12 @@ MonoBehaviour:
   playerStatus: {fileID: 11400000, guid: 98102957f0f8c4c54b51b297a7f2a343, type: 2}
   sanityDepletionRate: 3
   oxygenDepletionRate: 2
-  playerAudioSource: {fileID: 0}
+  playerAudioSource: {fileID: 2633147548154677035}
   predatorHitClips:
   - {fileID: 8300000, guid: bc16f1957751c4de0a54a4c842de2755, type: 3}
   - {fileID: 8300000, guid: 82f8b4f2b12be469c8af286c20bcb8c1, type: 3}
   - {fileID: 8300000, guid: dd1c8db5b34cd4408af9b59014737276, type: 3}
+  drowningSound: {fileID: 8300000, guid: ee66ecc685cc84bb798ad6dddcce1fc6, type: 3}
   leftMutationSprite: {fileID: -1788281831475180411, guid: 57b2c0a59f0080347a4762911da54f7b, type: 3}
   armMutationSprite: {fileID: 4657914736615051021, guid: 80a04005f5803b64283b0f51014ed79a, type: 3}
   headMutationSprite: {fileID: 6664482850190572292, guid: 7b90b37ed114e6f4f8339c4064ad20cb, type: 3}
@@ -285,8 +286,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.16370851, y: 1.6409642}
-      - {x: -2.8523939, y: 1.6097863}
+    - - {x: 0.8362915, y: 4.640964}
+      - {x: -3.8523939, y: 4.609786}
       - {x: -1.7880687, y: -1.0929158}
       - {x: -1.2134938, y: -1.019838}
   m_UseDelaunayMesh: 0
