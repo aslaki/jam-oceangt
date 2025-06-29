@@ -1834,7 +1834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2370761458290547033}
-  speed: 3
+  speed: 5
   isFacingLeft: 1
   playerHead: {fileID: 6502943070110650858}
   angle: 0
