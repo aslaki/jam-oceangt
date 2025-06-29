@@ -6,11 +6,16 @@ public class DeadScreenController : MonoBehaviour
 {
 
     private Canvas canvas;
-    void Start()
+    void OnEnable()
     {
         canvas = GetComponent<Canvas>();
         canvas.enabled = false; // Hide the dead screen initially
         GameManager.Instance.OnGameStateChanged += OnGameStateChanged;
+    }
+
+    void OnDisable()
+    {
+        GameManager.Instance.OnGameStateChanged -= OnGameStateChanged;
     }
 
     private void OnGameStateChanged(GameState state)
@@ -21,7 +26,7 @@ public class DeadScreenController : MonoBehaviour
     public void OnRestartButtonClicked()
     {
         Debug.Log("Restarting game...");
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("GameInit");
     }
     public void OnExitButtonClicked()
     {
