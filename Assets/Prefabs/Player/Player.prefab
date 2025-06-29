@@ -286,8 +286,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.16370851, y: 1.6409642}
-      - {x: -2.8523939, y: 1.6097863}
+    - - {x: 0.8362915, y: 4.640964}
+      - {x: -3.8523939, y: 4.609786}
       - {x: -1.7880687, y: -1.0929158}
       - {x: -1.2134938, y: -1.019838}
   m_UseDelaunayMesh: 0
@@ -450,7 +450,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.33066896, y: 3.0839496}
-  m_ConnectedAnchor: {x: -1.1949778, y: -2.3195896}
+  m_ConnectedAnchor: {x: -1.1949744, y: -2.3195941}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -711,7 +711,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 2.755178, y: 0.059936944}
-  m_ConnectedAnchor: {x: 0.93511045, y: 1.7789286}
+  m_ConnectedAnchor: {x: 0.935111, y: 1.7789408}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -1073,7 +1073,7 @@ HingeJoint2D:
   m_BreakAction: 2
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.056570437, y: 2.821945}
-  m_ConnectedAnchor: {x: 0.08802567, y: -1.268692}
+  m_ConnectedAnchor: {x: 0.08802621, y: -1.2686899}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -1408,7 +1408,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 2.7169118, y: -0.035728905}
-  m_ConnectedAnchor: {x: -1.1553543, y: 1.7139037}
+  m_ConnectedAnchor: {x: -1.1553528, y: 1.7139301}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -1596,7 +1596,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.6136101, y: 3.1040409}
-  m_ConnectedAnchor: {x: 0.8490226, y: -2.301519}
+  m_ConnectedAnchor: {x: 0.8490224, y: -2.3015234}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
