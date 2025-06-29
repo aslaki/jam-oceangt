@@ -3657,11 +3657,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2112799894160204261, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0
+      value: 0.8490224
       objectReference: {fileID: 0}
     - target: {fileID: 2112799894160204261, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -1.0000153
+      value: -2.3015234
       objectReference: {fileID: 0}
     - target: {fileID: 3027933422970215324, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
       propertyPath: playerAudioSource
@@ -3677,19 +3677,19 @@ PrefabInstance:
       objectReference: {fileID: 2142408819}
     - target: {fileID: 7212712063963456005, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.0069999695
+      value: 0.935111
       objectReference: {fileID: 0}
     - target: {fileID: 7212712063963456005, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.47146606
+      value: 1.7789408
       objectReference: {fileID: 0}
     - target: {fileID: 8009805944947985583, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.017064558
+      value: 0.08802621
       objectReference: {fileID: 0}
     - target: {fileID: 8009805944947985583, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.39957327
+      value: -1.2686899
       objectReference: {fileID: 0}
     - target: {fileID: 8233738945701862752, guid: 42764ae19985f2a4084bce84362c5c41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6856,9 +6856,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 773884129213856580, guid: 5f0e739b1390c824b9a9d16c943027a4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2570430881952626591, guid: 5f0e739b1390c824b9a9d16c943027a4, type: 3}
       propertyPath: m_Name
       value: DeadScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570430881952626591, guid: 5f0e739b1390c824b9a9d16c943027a4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4169607453955648989, guid: 5f0e739b1390c824b9a9d16c943027a4, type: 3}
       propertyPath: m_Pivot.x
