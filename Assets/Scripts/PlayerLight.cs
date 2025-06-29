@@ -12,7 +12,7 @@ public class PlayerLight : MonoBehaviour
     [SerializeField] private int numberOfRays = 20;
 
     private const float coneAngleOffset = 70f;
-    private const float coneDistanceOffsetFactor = 0.4f;
+    [SerializeField] private float coneDistanceOffsetFactor = 0.4f;
     [SerializeField] private PlayerStatus playerStatus;
 
     [Tooltip("The cooldown time for the horror creature effect.")]
