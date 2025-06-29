@@ -57,6 +57,7 @@ public class IntroSequence : MonoBehaviour
     private IEnumerator PlayIntro()
     {
         // Move bell to position
+        bell.gameObject.GetComponent<BellController>().OnBellSubmerge();
         Tween.Position(bell, bellEndPosition.position, 11f);
 
         Tween.Custom(globalLight.intensity, endIntensity, duration: 11f,
@@ -77,6 +78,7 @@ public class IntroSequence : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        bell.gameObject.GetComponent<BellController>().OnBellHitRocks();
         yield return Tween.ShakeCamera(Camera.main, strengthFactor: 0.5f).ToYieldInstruction();
         swingTween.Complete(); // Stop the swinging motion
 

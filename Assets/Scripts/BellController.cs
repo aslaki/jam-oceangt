@@ -1,39 +1,35 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BellController : MonoBehaviour
 {
 
-    public Transform bellPosition;
+    [SerializeField] private AudioClip submergeSound;
+    [SerializeField] private AudioClip hittingRocksSound;
+    [SerializeField] private AudioClip goingToBellSound;
+    [SerializeField] private AudioClip leavingBellSound;
+
+    private AudioSource bellAudioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        GameManager.Instance.OnGameStateChanged += OnGameStateChanged;
+        bellAudioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+    public void OnBellHitRocks() {
+        bellAudioSource.PlayOneShot(hittingRocksSound);
     }
 
-    void FixedUpdate()
-    {
-        if (GameManager.Instance.currentGameState != GameState.IntroSequence)
-        {
-            if (bellPosition.position == this.transform.position)
-            {
-                GameManager.Instance.OnExitIntro();
-            }
-        }
-        
+    public void OnBellSubmerge() {
+        bellAudioSource.PlayOneShot(submergeSound);
     }
 
-    private void OnGameStateChanged(GameState newState)
-    {
-        if (newState == GameState.IntroSequence)
-        {
-            StartCoroutine(LegacyTween.TweenToTarget(bellPosition, this.transform, 5f));
-        }
+    public void OnBellGoingToBell() {
+        bellAudioSource.PlayOneShot(goingToBellSound);
     }
     
+    public void OnBellLeavingBell() {
+        bellAudioSource.PlayOneShot(leavingBellSound);
+    }
 }
