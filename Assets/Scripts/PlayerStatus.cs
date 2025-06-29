@@ -174,6 +174,7 @@ using UnityEngine.SceneManagement;
 
         public void LoseSanity(float sanityAmount)
         {
+            Debug.Log("Losing sanity: " + sanityAmount);
             if (isDead || isImmortal)
                 return;
 
@@ -183,6 +184,7 @@ using UnityEngine.SceneManagement;
             // Check for death
             if (currentSanity <= 0 && !isDead)
             {
+                Debug.Log("Player is dead");
                 SetDead(true);
             }
         }
@@ -206,6 +208,7 @@ using UnityEngine.SceneManagement;
         // Set player's dead state
         public void SetDead(bool dead)
         {
+            Debug.Log("Setting player dead state to: " + dead);
             if (isDead == dead)
                 return; // No change
 
