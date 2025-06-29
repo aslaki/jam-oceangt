@@ -34,6 +34,13 @@ public class PlayerStatusController : MonoBehaviour
     {
         playerStatus.OnTriggerMutation += OnTriggerMutation;
     }
+
+    private void OnDisable()
+    {
+        playerStatus.OnTriggerMutation -= OnTriggerMutation;
+        
+    }
+    
     private void Update()
     {
 
@@ -52,6 +59,7 @@ public class PlayerStatusController : MonoBehaviour
 
     private void OnTriggerMutation(int mutationIndex)
     {
+        Debug.Log($"Triggered mutation {mutationIndex} for player status.");
         // Handle mutation effects based on the mutation index
         switch (mutationIndex)
         {

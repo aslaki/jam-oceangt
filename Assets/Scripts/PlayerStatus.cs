@@ -33,11 +33,10 @@ using UnityEngine.SceneManagement;
         [SerializeField]
         private int fishEatCount = 0;
 
-        [SerializeField]
         private int requiredFishEatCount = 38; // Number of fish to eat to win
         
-        [SerializeField]
         private int[] mutationThresholds = new int[] { 5, 11, 17, 24, 31, 38 }; // Thresholds for mutations};
+
         [SerializeField]
         private int currentMutationIndex = 0;
         // Events
@@ -48,9 +47,11 @@ using UnityEngine.SceneManagement;
         public event Action<int> OnTriggerMutation;
 
         public event Action OnPlayerDied;
+        
+        public event Action OnPlayerWon;
 
         // Properties
-        public float MaxOxygen => maxOxygen;
+    public float MaxOxygen => maxOxygen;
         public float CurrentOxygen => currentOxygen;
         public float MaxSanity => maxSanity;
         public float CurrentSanity => currentSanity;
@@ -92,7 +93,7 @@ using UnityEngine.SceneManagement;
             Debug.Log("Resetting player status");
             currentOxygen = maxOxygen;
             currentSanity = maxSanity;
-            currentLightPower = 5f;
+            currentLightPower = 15f;
             isDead = false;
             fishEatCount = 0;
             currentMutationIndex = 0;
@@ -104,7 +105,7 @@ using UnityEngine.SceneManagement;
         public void ApplyEffect(FishEffectType fishEffectType) {
             switch (fishEffectType) {
                 case FishEffectType.Light:
-                    IncreaseLightPower(1);
+                    IncreaseLightPower(50);
                     break;
                 case FishEffectType.Sanity:
                     GainSanity(10);
@@ -118,12 +119,20 @@ using UnityEngine.SceneManagement;
                     break;
             }
             fishEatCount++;
+            Debug.Log($"Fish eaten: {fishEatCount}");
             for(int i = 0; i < mutationThresholds.Length; i++) {
-                if (fishEatCount == mutationThresholds[i]) {
-                    currentMutationIndex++;
-                    OnTriggerMutation?.Invoke(currentMutationIndex); // Trigger mutation event
-                    Debug.Log($"Triggered mutation {currentMutationIndex} at fish count {fishEatCount}");
-                }
+                Debug.Log($"Checking mutation threshold {i}: {mutationThresholds[i]} against fishEatCount: {fishEatCount}");
+                if (fishEatCount == mutationThresholds[i])
+            {
+                currentMutationIndex++;
+                OnTriggerMutation?.Invoke(currentMutationIndex); // Trigger mutation event
+                Debug.Log($"Triggered mutation {currentMutationIndex} at fish count {fishEatCount}");
+
+            }
+            }
+            if (fishEatCount >= requiredFishEatCount) {
+                Debug.Log("Player has eaten enough fish to win!");
+                OnPlayerWon?.Invoke();
             }
             
             

@@ -185,8 +185,8 @@ MonoBehaviour:
   leftArmSpriteRenderer: {fileID: 5915908054399134015}
   rightArmSpriteRenderer: {fileID: 5615677940180914120}
   maxEyeLightIntensity: 2
-  eyeLight1: {fileID: 0}
-  eyeLight2: {fileID: 0}
+  eyeLight1: {fileID: 6490260878686038824}
+  eyeLight2: {fileID: 3832751674935468330}
 --- !u!1 &1919781835107817990
 GameObject:
   m_ObjectHideFlags: 0
