@@ -20,6 +20,16 @@ public class GameManager : MonoBehaviour
 
     public GameState currentGameState;
 
+    [SerializeField] private PlayerStatus playerStatus;
+
+    private void OnEnable() {
+        playerStatus.OnPlayerDied += OnPlayerDied;
+    }
+
+    private void OnDisable() {
+        playerStatus.OnPlayerDied -= OnPlayerDied;
+    }
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -42,6 +52,8 @@ public class GameManager : MonoBehaviour
             case GameState.IntroSequence:
                 break;
             case GameState.Game:
+                break;
+            case GameState.Dead:
                 break;
         }
 

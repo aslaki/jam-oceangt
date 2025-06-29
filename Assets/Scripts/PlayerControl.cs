@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,6 +26,12 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     float angle;
 
+    [SerializeField]
+    Transform[] relatedTransforms;
+
+    [SerializeField]
+    Transform headRotationPoint;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -50,7 +57,7 @@ public class PlayerControl : MonoBehaviour
         ) * speed);
 
         //Negate gravity by adding force in the opposite direction of gravity
-        rb.AddForce(-Physics2D.gravity * rb.mass * 3);
+        rb.AddForce(-Physics2D.gravity * rb.mass * 5f);
         if (moveLeft || moveRight)
         {
             isFacingLeft = moveLeft && !moveRight;
@@ -58,11 +65,17 @@ public class PlayerControl : MonoBehaviour
 
         if(isFacingLeft)
         {
-            rb.transform.localScale = new Vector3(1, 1, 1);
+            foreach (var t in relatedTransforms)
+            {
+                t.localScale= new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+            }
         }
         else
         {
-             rb.transform.localScale = new Vector3(-1, 1, 1);
+            foreach (var t in relatedTransforms)
+            {
+                t.localScale = new Vector3(Mathf.Abs(t.localScale.x) * -1, t.localScale.y, t.localScale.z);
+            }
         }
         
         RotateHeadTowardsMouse();
