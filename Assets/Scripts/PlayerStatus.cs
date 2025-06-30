@@ -113,7 +113,7 @@ using UnityEngine.SceneManagement;
                     GainSanity(10);
                     break;
                 case FishEffectType.Oxygen:
-                    GainOxygen(10);
+                    GainOxygen(12);
                     break;
                 case FishEffectType.Predator:
                     LoseSanity(20);
