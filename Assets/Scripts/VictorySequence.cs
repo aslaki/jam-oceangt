@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class VictorySequence : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerStatus playerStatus;
 
-    [SerializeField] private PlayerStatus playerStatus;
-    [SerializeField] private AudioSource victoryAudioSource;
+    [SerializeField]
+    private AudioSource victoryAudioSource;
 
-    [SerializeField] private Transform playerTransform;
+    [SerializeField]
+    private Transform playerTransform;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,11 +34,14 @@ public class VictorySequence : MonoBehaviour
 
     private void OnPlayerWon()
     {
+        if (playerStatus.isImmortal)
+        {
+            return;
+        }
+
         Debug.Log("Player has won the game!");
         playerStatus.isImmortal = true; // Set player to immortal state
         StartCoroutine(PlayVictorySequence());
-
-
     }
 
     private IEnumerator PlayVictorySequence()
@@ -43,7 +50,5 @@ public class VictorySequence : MonoBehaviour
         victoryAudioSource.transform.position = playerTransform.position;
         yield return new WaitForSeconds(victoryAudioSource.clip.length + 3f);
         SceneManager.LoadScene("GameInit");
-        
-        
     }
 }
