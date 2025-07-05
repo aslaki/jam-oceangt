@@ -175,6 +175,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 82f8b4f2b12be469c8af286c20bcb8c1, type: 3}
   - {fileID: 8300000, guid: dd1c8db5b34cd4408af9b59014737276, type: 3}
   drowningSound: {fileID: 8300000, guid: ee66ecc685cc84bb798ad6dddcce1fc6, type: 3}
+  mutationAudioClip: {fileID: 8300000, guid: fec784651059e47acb6dffbc16a7ab41, type: 3}
   leftMutationSprite: {fileID: -1788281831475180411, guid: 57b2c0a59f0080347a4762911da54f7b, type: 3}
   armMutationSprite: {fileID: 4657914736615051021, guid: 80a04005f5803b64283b0f51014ed79a, type: 3}
   headMutationSprite: {fileID: 6664482850190572292, guid: 7b90b37ed114e6f4f8339c4064ad20cb, type: 3}
