@@ -143,7 +143,7 @@ public class PlayerStatus : ScriptableObject
                 );
             }
         }
-        if (fishEatCount >= requiredFishEatCount)
+        if (fishEatCount >= requiredFishEatCount && !isImmortal)
         {
             Debug.Log("Player has eaten enough fish to win!");
             isImmortal = true; // Set player to immortal state

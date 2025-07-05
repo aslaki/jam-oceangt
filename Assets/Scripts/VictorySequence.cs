@@ -34,11 +34,6 @@ public class VictorySequence : MonoBehaviour
 
     private void OnPlayerWon()
     {
-        if (playerStatus.isImmortal)
-        {
-            return;
-        }
-
         Debug.Log("Player has won the game!");
         playerStatus.isImmortal = true; // Set player to immortal state
         StartCoroutine(PlayVictorySequence());
